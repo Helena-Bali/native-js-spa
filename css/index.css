@@ -1,0 +1,319 @@
+html, body {
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#app {
+    min-height: 100vh; /* Растягиваем на всю высоту экрана */
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F7;
+}
+
+.container {
+    display: flex;
+    width: auto;
+    height: 100%;
+    margin: 0 auto; /* Центрируем */
+    background-color: #F2F2F7;
+    flex-grow: 1; /* Чтобы контейнер растягивался */
+    margin-left: 304px;
+}
+
+.navbar {
+    width: 270px;
+    height: 100vh;
+    background-color: #F2F2F7;
+    color: black;
+    padding: 20px;
+    position: fixed;
+}
+
+.navbar h2 {
+    margin-top: 0;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 15px 0;
+}
+
+.navbar ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.currency-container {
+    display: flex;
+    width: auto;
+    margin: 20px;
+    height: 100%;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+/* Левая часть (таблица) */
+.currency-table-section {
+    width: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.currency-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding: 20px;
+    background: #007AFF14;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 34px;
+    font-weight: bold;
+    color: #161846
+}
+
+.currency-date {
+    color: #007AFF;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.column-name {
+    height: 20px;
+    padding-bottom: 20px;
+    font-size: 22px;
+    color:  #161846;
+}
+
+.column-title {
+    font-size: 17px;
+    color: #3C3C4399;
+}
+
+/* Таблица */
+.currency-columns {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.currency-column {
+    flex: 1;
+    background: #007AFF14;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.currency-column h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Стили для списка валют */
+#currency-list, #best-courses, #exchange-list {
+    min-height: 200px; /* Чтобы было видно блоки */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.currency-flag {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.table-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    width: 100%;
+    align-items: center;
+    gap: 5px;
+}
+
+.table-cell {
+    flex: 1;
+    text-align: left;
+    padding: 5px;
+    color:  #161846;
+    font-weight: bold;
+}
+
+.table-cell-bold {
+    flex: 1;
+    text-align: left;
+    padding: 5px;
+    font: bold 22px Arial, sans-serif;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+/* Правая часть (конвертер) */
+.currency-converter {
+    width: 20rem;
+    background: #007AFF29;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.converter-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.currency-code {
+    font-size: 28px;
+    font-weight: bold;
+    color: #161846;
+}
+
+.converter-row img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.converter-row input {
+    flex: 1;
+    padding: 8px;
+    margin-left: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: white;
+}
+
+.add-currency {
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+}
+
+.currency-dropdown {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 200px;
+    z-index: 1000;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.dropdown-item img {
+    width: 25px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.dropdown-item:hover {
+    background: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .navbar {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+/*timer*/
+
+.timer-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+#timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    font-size:60px;
+    color: #161846;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+.digital-timer {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
