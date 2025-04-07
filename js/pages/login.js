@@ -2,12 +2,22 @@ import {login} from '../auth.js'
 
 export function loginPage() {
     return `
-        <h2>Авторизация</h2>
-       <form id="login-form">
-            <input type="text" id="username" placeholder="Логин">
-            <input type="password" id="password" placeholder="Пароль">
-            <button type="submit">Войти</button>
-        </form>
+    <div class="login-page">
+        <div class="login-container">
+            <h1>Log in</h1>
+            <p class="welcome-text">Welcome Back</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+       
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
     `;
 }
 
@@ -17,12 +27,13 @@ export function attachLoginHandlers() {
         if (form) {
             form.addEventListener("submit", (event) => {
                 event.preventDefault();
-                const username = document.getElementById("username").value;
+                const email = document.getElementById("email").value;
                 const password = document.getElementById("password").value;
-                login(username, password);
+                login(email, password);
             });
         } else {
             console.error("Форма логина не найдена!");
         }
     }, 0);
 }
+

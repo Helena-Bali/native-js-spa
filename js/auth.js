@@ -1,14 +1,14 @@
-const USERNAME = "admin";
-const PASSWORD = "password";
+const EMAIL = "admin@gmail.com";
+const PASSWORD = "1357";
 
-export function login(username, password) {
-    if (username === USERNAME && password === PASSWORD) {
+export function login(email, password) {
+    if (email === EMAIL && password === PASSWORD) {
         const token = {
             value: "my_secure_token",
-            expires: Date.now() + 60 * 60 * 1000 // 1 час
+            expires: Date.now() + 60 * 60 * 1000
         };
         localStorage.setItem("token", JSON.stringify(token));
-        window.location.hash = "#currency"; // Перенаправляем на главную страницу
+        window.location.hash = "#currency";
     } else {
         alert("Неверные данные!");
     }
@@ -31,7 +31,11 @@ function isAuthenticated() {
 export function checkAuth() {
     if (!isAuthenticated() && window.location.hash !== "#login") {
         window.location.hash = "#login";
+        const navbar = document.querySelector(".navbar");
+        if (navbar) {
+            navbar.remove();
+        }
     }
 }
 
-setInterval(checkAuth, 5000); // Проверяем токен каждые 5 секунд
+setInterval(checkAuth, 5000);

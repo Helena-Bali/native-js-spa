@@ -1,0 +1,258 @@
+
+.video-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.video-header {
+    font-size: 34px;
+    color: #161846;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.upload-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-container.floating {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    justify-content: flex-end;
+}
+
+
+#upload-btn {
+    margin-bottom: 20px;
+    width: 152px;
+    height: 50px;
+    background-color: #161846;
+    border-radius: 25px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+#upload-btn.floating {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin-top: 40px;
+}
+
+.upload-message {
+    font-size: 17px;
+    color: #161846;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.no-video-text {
+    font-size: 28px;
+    color: #161846;
+    margin-bottom: 10px;
+}
+
+.play-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+/*#progress-bar-container {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    max-width: 400px;*/
+/*    height: 20px;*/
+/*    background-color: #e0e0e0;*/
+/*    border-radius: 10px;*/
+/*    overflow: hidden;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*#progress-bar {*/
+/*    height: 100%;*/
+/*    width: 0;*/
+/*    background-color: #161846;*/
+/*    transition: width 0.2s;*/
+/*}*/
+
+/*#progress-percent {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 50%;*/
+/*    transform: translateX(-50%);*/
+/*    font-size: 14px;*/
+/*    line-height: 20px;*/
+/*    color: #000;*/
+/*}*/
+
+
+.thumbnails-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 80px;
+}
+
+.video-thumb {
+    width: 270px;
+    height: 210px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Popup player */
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-popup {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.video-popup video {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: black;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.progress-modal {
+    text-align: center;
+    color: white;
+}
+
+.progress-bar-wrapper {
+    width: 300px;
+    height: 20px;
+    background-color: #555;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#modal-progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+#modal-progress-percent {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none!important;
+}
+
+@media (max-width: 768px) {
+    .video-page {
+        margin-left: 0;
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .upload-container {
+        height: auto;
+        width: auto;
+    }
+
+    .video-thumb {
+        width: 100%;
+        height: auto;
+    }
+    #upload-btn.floating {
+        width: 152px;
+        height: 50px;
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    #upload-btn.floating {
+        width: 60px;
+        height: 60px;
+        margin-top: 60px;
+    }
+
+    .upload-container.floating {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: auto;
+        justify-content: flex-end;
+    }
+
+}
+
